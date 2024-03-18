@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Global Element Declarations -->
+  <xsd:element name="Movie" type="MovieType"/>
+  <xsd:element name="name" type="xsd:string"/>
+  <xsd:element name="movieLength" type="xsd:string"/>
+  <xsd:element name="categoryName" type="CategoryNameType"/>
+  <xsd:element name="categoryName2" type="xsd:string"/>
+  <xsd:element name="Actors" type="ActorsType"/>
+  <xsd:element name="Actor" type="ActorType"/>
+  <xsd:element name="lastName" type="xsd:string"/>
+  <xsd:element name="languageName" type="LanguageNameType"/>
+  <xsd:element name="languageName2" type="xsd:string"/>
+  <xsd:element name="producer" type="ProducerType"/>
+
+  <!-- Complex Type Definitions -->
+  <xsd:complexType name="MovieType">
+    <xsd:sequence>
+      <xsd:element ref="name"/>
+      <xsd:element ref="movieLength"/>
+      <xsd:element ref="categoryName"/>
+      <xsd:element ref="Actors"/>
+      <xsd:element ref="languageName"/>
+      <xsd:element ref="producer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="CategoryNameType">
+    <xsd:sequence>
+      <xsd:element ref="categoryName2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ActorsType">
+    <xsd:sequence>
+      <xsd:element ref="Actor" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ActorType">
+    <xsd:sequence>
+      <xsd:element ref="lastName"/>
+      <xsd:element ref="name"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="LanguageNameType">
+    <xsd:sequence>
+      <xsd:element ref="languageName2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ProducerType">
+    <xsd:sequence>
+      <xsd:element ref="lastName"/>
+      <xsd:element ref="name"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
+ 
